@@ -51,3 +51,5 @@ class Perceptron {
     return this.bias;
   }
 }
+
+export default Perceptron;
