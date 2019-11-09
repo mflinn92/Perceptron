@@ -1,6 +1,7 @@
 
 class Perceptron {
   constructor(inputSize) {
+    this.trainingSessions = 100; // number of times to run through training data will building classifier
     this.weights = []; // determines slope of classifying line
     this.learningRate = 0.1;
     this.bias = 0; // determines vertical position of classifying line
@@ -23,7 +24,6 @@ class Perceptron {
   }
 
   train(inputVector, label) {
-    console.log(this.weights);
     if (inputVector.length !== this.weights.length) {
       return null;
     }
@@ -43,6 +43,17 @@ class Perceptron {
     this.bias += this.learningRate * (label - predicition); 
   }
   
+  bulkTrain(inputData, labels) {
+    if (inputData.length !== labels.length) {
+      return null;
+    }
+    for (let i = 0; i < this.trainingSessions; i++) {
+      for (let j = 0; j < labels.length; j++) {
+        this.train(inputData[j], labels[j]);
+      }
+    }
+  }
+  
   getWeights() {
     return this.weights;
   }
@@ -52,4 +63,4 @@ class Perceptron {
   }
 }
 
-export default Perceptron;
+module.exports = Perceptron;
