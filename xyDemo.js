@@ -14,10 +14,13 @@ const trainingData = [
     [-2, -4],
     [4,5],
     [2, -2],
-    [2, 2]
+    [2, 2],
+    [0,0],
+    [23, 1],
+    [2, 12]
 ];
 
-const labels = [1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1];
+const labels = [1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1];
 
 const model = new Perceptron(2);
 model.bulkTrain(trainingData, labels);
@@ -25,3 +28,4 @@ console.log('Final weights: ', model.getWeights());
 console.log('Final bias: ', model.getBias());
 console.log(model.predict([2, 7]) ? 'Yes': 'No');
 console.log(model.predict([-1, 1]) ? 'Yes' : 'No');
+console.log(model.predict([0, 0]) ? 'Yes' : 'No');
