@@ -20,7 +20,7 @@ class Perceptron {
       score += inputVector[i] * this.weights[i];
     }
     score += this.bias;
-    return (score > 0) ? 1 : 0;
+    return (score >= 0) ? 1 : 0;
   }
 
   train(inputVector, label) {
