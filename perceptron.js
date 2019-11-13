@@ -34,6 +34,7 @@ class Perceptron {
       this.updateWeights(inputVector, label, guess);
     }
   }
+  
   updateWeights(inputVector, label, predicition) {
     for (let i = 0; i < this.weights.length; i++) {
       // If mistake was made adjust slope of classifier slightly so that it more accurately answers the question
