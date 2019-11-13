@@ -4,24 +4,15 @@ const Perceptron = require('./perceptron.js');
 // All points with x >= 1 and y >= 1 are yes, all others are no
 
 const trainingData = [
-    [1,1],
-    [2,1],
-    [0,1],
-    [1,0],
-    [-1,-1],
-    [3,2],
-    [-1, 3],
-    [-2, -4],
-    [4,5],
-    [2, -2],
-    [2, 2],
+    [1, 1],
+    [-1, -1],
+    [3, 2],
     [0,0],
-    [23, 1],
-    [2, 12],
-    [-2, 6]
+    [-1, 1],
+    [-1,5]
 ];
 
-const labels = [1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0];
+const labels = [1, 0, 1, 0, 0, 1];
 
 const model = new Perceptron(2);
 model.bulkTrain(trainingData, labels);

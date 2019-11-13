@@ -1,7 +1,7 @@
 
 class Perceptron {
   constructor(inputSize) {
-    this.trainingSessions = 100; // number of times to run through training data will building classifier
+    this.trainingSessions = 1000; // number of times to run through training data will building classifier
     this.weights = []; // determines slope of classifying line
     this.learningRate = 0.1;
     this.bias = 0; // determines vertical position of classifying line
